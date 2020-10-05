@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #bbe1fa;
+    background: #1b262c;
+  }
+}
