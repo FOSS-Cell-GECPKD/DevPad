@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.14.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "client": "cd .. & cd blog && npm start",
-    "dev": "concurrently -n 'server,client' \"nodemon server.js\" -c 'red,green' \"npm run client\""
+    "dev": "concurrently -n 'server,client' \"nodemon server.js\" -c 'red,green' \"npm run client\"",
+    "heroku-postbuild": "npm install --prefix blog && npm run build --prefix blog"
   },
   "keywords": [],
   "author": "",
