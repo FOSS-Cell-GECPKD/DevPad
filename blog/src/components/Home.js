@@ -116,9 +116,9 @@ const Home = (props) => {
             </CardContent>
             <CardActions>
               <Button
-                variant="contained"
+                variant="text"
                 size="small"
-                onClick={() => history.push("/")}
+                onClick={() => history.push("/new")}
               >
                 Create first Post
               </Button>
