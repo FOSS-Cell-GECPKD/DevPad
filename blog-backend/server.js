@@ -16,6 +16,7 @@ express.Router().get("/hello", (req, res) => {
   res.send("Hello world");
 });
 app.use("/posts", require("./routes/postRoutes"));
+app.use("/users", require("./routes/users"));
 
 // setup mongoose
 
