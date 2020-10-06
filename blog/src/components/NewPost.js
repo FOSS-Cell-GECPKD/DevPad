@@ -80,7 +80,7 @@ const NewPost = () => {
   const classes = useStyles();
   const handleSubmit = (e) => {
     e.preventDefault();
-    Axios.post("http://localhost:5000/posts/", {
+    Axios.post("https://devpadfoss.herokuapp.com/posts/", {
       ...data,
       createdAt: Number(new Date()),
     })
