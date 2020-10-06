@@ -37,5 +37,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://devpadfoss.herokuapp.com/posts:5000"
+  "proxy": "https://localhost:5000"
 }
