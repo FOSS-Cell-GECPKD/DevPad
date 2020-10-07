@@ -2,6 +2,8 @@ var express = require('express');
 var User=require("../models/users");
 var passport=require("passport");
 var authenticate=require("../authenticate");
+var jwt=require("jsonwebtoken");      
+var config=require("../config");
 
 var router = express.Router();
 
@@ -52,14 +54,13 @@ router.post('/signup', (req, res, next) => {
 });
   
 router.post('/login', passport.authenticate('local'),(req, res) => {
-    // Here we will be issuing token to the user able to authenticate.  A soon as we are done with passport.authenticate we are saying user info is present in the req.
-    var token=authenticate.getToken({_id:req.user._id})
 
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'application/json');
-
-      res.json({success: true,token:token, status: 'You are successfully logged in!'});
+    var token=authenticate.getToken({_id:req.user._id});
     
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
+    res.json({success: true, token:token, status: 'You are successfully logged in!'});
+
 });
 
 router.get('/logout', (req, res) => {
