@@ -1,11 +1,17 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
+
+body {
+	color: #1b262c;
+	background: #f1f7fb;
+}
+
 @media (prefers-color-scheme: dark) {
-  body {
-    color: #bbe1fa;
-    background: #1b262c;
-  }
+	body {
+		color: #bbe1fa;
+		background: #1b262c;
+	}
 }
