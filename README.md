@@ -22,7 +22,7 @@ Upcoming features:
 - [MongoDB](https://www.mongodb.com/) - Simple and Efficient No SQL Database.
 - [node.js] - evented I/O for the backend
 - [Express] - fast node.js network app framework [@tjholowaychuk]
-- [Material UI] - great UI boilerplate for modern web apps
+- [Material UI](https://material-ui.com) - great UI boilerplate for modern web apps
 - [VS Code](https://code.visualstudio.com/) - efficient and light weight text editor
 
 And of course DevPad is a open source project with a [public repository](https://github.com/FOSS-Cell-GECPKD/DevPad)[dill]
