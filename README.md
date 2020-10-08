@@ -25,7 +25,7 @@ Upcoming features:
 - [Material UI](https://material-ui.com) - great UI boilerplate for modern web apps
 - [VS Code](https://code.visualstudio.com/) - efficient and light weight text editor
 
-And of course DevPad is a open source project with a [public repository](https://github.com/FOSS-Cell-GECPKD/DevPad)[dill]
+And of course DevPad is a open source project with a [public repository](https://github.com/FOSS-Cell-GECPKD/DevPad)
 on GitHub.
 
 ### Installation
