@@ -73,7 +73,7 @@ const Home = (props) => {
   const classes = useStyles();
 
   useLayoutEffect(()=> {
-      const alreadyVisitor = localStorage.getItem('alreadyVisitor');
+      const alreadyVisitor = JSON.parse(localStorage.getItem('alreadyVisitor'));
       if(alreadyVisitor && !alreadyVisitor.new){
         setOpen(false);
        } else {
