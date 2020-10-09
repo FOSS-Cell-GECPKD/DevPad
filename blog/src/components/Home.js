@@ -15,7 +15,7 @@ import {
 import { Alert, AlertTitle } from "@material-ui/lab";
 import { Close, NewReleases, EmojiEmotions } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useLayoutEffect } from "react";
 import { useHistory } from "react-router-dom";
 import CardImgWebP from "./../Assets/creative-image.webp";
 import CardImgJpg from "./../Assets/creative-image.jpg";
@@ -72,6 +72,16 @@ const Home = (props) => {
   const [open, setOpen] = useState(true);
   const classes = useStyles();
 
+  useLayoutEffect(()=> {
+      const alreadyVisitor = localStorage.getItem('alreadyVisitor');
+      if(alreadyVisitor && !alreadyVisitor.new){
+        setOpen(false);
+       } else {
+        const visitor = {new:false}
+        localStorage.setItem('alreadyVisitor', JSON.stringify(visitor));
+      }
+  },[])
+  
   return (
     <Container className={classes.Container}>
       <Collapse in={open} className={classes.Collapse}>
