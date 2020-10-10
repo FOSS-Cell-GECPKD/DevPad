@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { PostListContext } from "../Context/PostListContext";
 import {
@@ -11,7 +11,7 @@ import {
   Snackbar,
   IconButton,
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 import { Close, Send } from "@material-ui/icons";
 import Axios from "axios";
 const useStyles = makeStyles((theme) => ({
@@ -29,10 +29,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const NewPost = () => {
+  const history = useHistory()
   const [open, setOpen] = useState(false);
-  const { setPosts } = useContext(PostListContext);
+  const { setPosts,logged } = useContext(PostListContext);
   const [error, setError] = useState("Successfully Posted!!!");
   const [data, setData] = useState({});
+
+  useEffect(() => {
+    
+    if (logged === false){
+      history.push('/login')
+    }
+  }, [logged,history])
+
   const handleChange = (e) => {
     if (e.target.name === "tags") {
       setData({
@@ -85,7 +94,6 @@ const NewPost = () => {
       createdAt: Number(new Date()),
     })
       .then((response) => {
-        console.log(response.data);
         setOpen(true);
         setPosts({});
       })

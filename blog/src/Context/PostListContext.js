@@ -6,15 +6,18 @@ export const PostListContext = createContext();
 export const PostListContextProvider = (props) => {
   const [theme, setTheme] = useState(light_theme);
   const cur_theme = useMediaQuery("(prefers-color-scheme: dark)");
-
   useEffect(() => {
     let value = cur_theme ? dark_theme : light_theme;
     setTheme(value);
   }, [cur_theme]);
-
+  
+  const [logged, setLogged] = useState(false);
+  const [user, setUser] = useState(null);
+  
   const [posts, setPosts] = useState([]);
+
   const getPost = async () => {
-    await axios.get("https://devpadfoss.herokuapp.com/posts/").then((res) => {
+    await axios.get("http://localhost:5000/posts/").then((res) => {
       setPosts(res.data);
     });
   };
@@ -29,6 +32,10 @@ export const PostListContextProvider = (props) => {
         posts,
         theme,
         setPosts,
+        logged,
+        setLogged,
+        user,
+        setUser
       }}
     >
       {props.children}
