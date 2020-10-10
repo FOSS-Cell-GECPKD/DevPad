@@ -10,6 +10,7 @@ import {
   CardHeader,
   Avatar,
 } from "@material-ui/core";
+import Chip from '@material-ui/core/Chip';
 import { FileCopyRounded, ArrowForward } from "@material-ui/icons";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
@@ -42,7 +43,7 @@ const PostItem = ({ post, location }) => {
     return `${date.toDateString()}`;
   };
   const handleTags = (tags) => {
-    return tags.map((tag, index) => <span key={index}>{tag}, </span>);
+    return tags.map((tag, index) => <Chip size="small" variant="outlined" label={tag} />);
   };
   const handleClick = (id) => {
     history.push(`/posts/${id}`);
@@ -74,7 +75,7 @@ const PostItem = ({ post, location }) => {
         />
         <CardContent>
           <Typography variant="subtitle2" color="primary">
-            Tags: {handleTags(post.tags)}
+            {handleTags(post.tags)}
           </Typography>
         </CardContent>
         <CardActions>
