@@ -1,12 +1,14 @@
-import React from "react";
+import React,{useContext} from "react";
 import {
   AppBar,
   Toolbar,
   Typography,
   Button,
   IconButton,
+  Avatar
 } from "@material-ui/core";
 import { Add } from "@material-ui/icons";
+import { PostListContext } from "./../Context/PostListContext";
 import { useHistory, withRouter } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
@@ -18,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar = (props) => {
   const classes = useStyles();
+  const {user} = useContext(PostListContext);
   const path = props.location.pathname;
   const history = useHistory();
   // const classes = useStyles();
@@ -37,6 +40,9 @@ const NavBar = (props) => {
         <Typography variant="h6" style={{ flex: "1" }} onClick={handleHome}>
           DevPad
         </Typography>
+        {user &&
+        <Avatar style={{marginRight:'1rem'}}>{user[0].toUpperCase()}
+</Avatar>}
         <Button
           color="inherit"
           onClick={handleClick}

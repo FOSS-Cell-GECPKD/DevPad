@@ -36,7 +36,7 @@ const Post = (props) => {
   const [post, setPost] = useState({});
   async function getPost(id) {
     await axios
-      .get(`http://localhost:5000/posts/${id}`)
+      .get(`https://devpadfoss.herokuapp.com/posts/${id}`)
       .then((res) => {
         setPost(res.data);
       })
