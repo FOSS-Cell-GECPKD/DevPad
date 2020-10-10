@@ -75,7 +75,7 @@ const Form = (props) => {
       if (values.password !== values.cpassword) {
         alert("Password Mismatch !!!");
       } else {
-        const url = "http://devpadfoss.herokuapp.com/users/signup";
+        const url = "https://devpadfoss.herokuapp.com/users/signup";
         Axios.post(url, {
           username: values.username,
           password: values.password,
