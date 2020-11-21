@@ -9,5 +9,3 @@ const Login = () => {
 }
 
 export default Login
-// login api
-//https://localhost:5000/users/login
