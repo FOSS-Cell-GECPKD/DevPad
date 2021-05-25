@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const user = require('./users');
 
 const postSchema = mongoose.Schema({
+	// this is a reference to the user document and the
+	// author can be retreieved from the reference
 	authorId: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: user,
