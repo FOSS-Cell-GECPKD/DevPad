@@ -67,3 +67,5 @@ MIT
 [twitter bootstrap]: http://twitter.github.com/bootstrap/
 [jquery]: http://jquery.com
 [express]: http://expressjs.com
+
+This project was a part of FOSS OpenHack '20: https://openhack.gitbook.io/openhack-20/.
